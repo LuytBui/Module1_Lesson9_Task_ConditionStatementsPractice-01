@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+<h2>Nhập điểm</h2>
+Bài kiểm tra 1 <input type="number" id="quiz1" value="10"> Hệ số 10%<br>
+Bài kiểm tra 2 <input type="number" id="quiz2" value="10"> Hệ số 10%<br>
+Bài thi giữa kỳ <input type="number" id="middleTest" value="10"> Hệ số 25%<br>
+Bài thi cuối kỳ <input type="number" id="finalTest" value="10"> Hệ số 55%<br>
+<input type="button" value="Xếp loại" onclick="run()">
+<p id="averageScore"></p>
+<p id="degree"></p>
+
+
+<script>
+    function run() {
+        let quiz1Score = parseFloat(document.getElementById('quiz1').value);
+        let quiz2Score = parseFloat(document.getElementById('quiz2').value);
+        let middleTestScore = parseFloat(document.getElementById('middleTest').value);
+        let finalTestScore = parseFloat(document.getElementById('finalTest').value);
+        let averageScore =
+            quiz1Score * 0.1 + quiz2Score * 0.1 + middleTestScore * 0.25 + finalTestScore * 0.55;
+        console.log(quiz1Score);
+        console.log(quiz2Score);
+        console.log(middleTestScore);
+        console.log(finalTestScore);
+        console.log(averageScore);
+
+        let degree;
+        if (averageScore >= 9.5) {
+            degree = 'Xuất sắc';
+        } else if (averageScore >= 8.5) {
+            degree = 'Giỏi';
+        } else if (averageScore >= 7) {
+            degree = 'Khá';
+        } else if (averageScore >= 5.5) {
+            degree = 'Trung bình';
+        } else {
+            degree = 'Yếu';
+        }
+        document.getElementById('averageScore').innerText = 'Điểm trung bình: ' + averageScore;
+        document.getElementById('degree').innerText = 'Xếp loại: ' + degree;
+    }
+</script>
+</body>
+</html>

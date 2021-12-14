@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+<!--Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng-->
+
+<!--Doanh số đạt | Hoa hồng-->
+<!--0 triệu | 2.5%-->
+<!--80 triệu | 4%-->
+<!--160 triệu | 5.5%-->
+<!--240 triệu | 7%-->
+<!--400 triệu | 8.5%-->
+
+<script>
+    let sale = parseFloat(prompt('Nhập doanh số (đơn vị triệu đồng):'));
+    let commisionRate;
+    if (sale > 400) {
+        commisionRate = 0.085;
+    } else if (sale > 240) {
+        commisionRate = 0.07;
+    } else if (sale > 160) {
+        commisionRate = 0.055;
+    } else if (sale > 80) {
+        commisionRate = 0.04;
+    } else {
+        commisionRate = 0.025;
+    }
+    let commission = sale * commisionRate;
+    let message = 'Mức hoa hồng là ' + (commisionRate * 100) + '% của '
+        + sale + ' triệu đồng. Bằng ' + commission.toFixed(2) + ' triệu đồng';
+    alert(message);
+
+</script>
+
+
+</body>
+</html>

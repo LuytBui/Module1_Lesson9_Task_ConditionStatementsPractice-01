@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+
+<!--Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho-->
+
+<!--Phí thuê bao: 25000đ-->
+<!--50 phút gọi đầu tiên: 600đ/phút-->
+<!--150 phút gọi tiếp theo: 400đ/phút-->
+<!--sau 200 phút gọi: 200đ/phút-->
+
+<script>
+    const SUBSCRIPTION_FEE = 25000; // phí thuê bao hàng tháng
+
+    let callingTime = parseFloat(prompt('Nhập số phút gọi:'));
+    let callingFee, totalFee;
+    let first50MinuteFee =  50 * 600;
+    let first200MinuteFee = first50MinuteFee + 150 * 400;
+
+    if (callingTime > 200){
+        callingFee = first200MinuteFee + (callingTime - 200) *200;
+    } else if (callingTime > 50){
+        callingFee = first50MinuteFee + (callingTime - 50) * 400;
+    } else {
+        callingFee = callingTime * 600;
+    }
+
+    totalFee = callingFee + SUBSCRIPTION_FEE;
+    let message = 'Tổng số tiền cước: ' + totalFee + ' VND.'    ;
+    alert(message);
+
+</script>
+</body>
+</html>
